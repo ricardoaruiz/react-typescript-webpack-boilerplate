@@ -1,5 +1,6 @@
 import React from 'react'
 
+import * as S from './styles'
 export const Button = () => {
-  return <button>Button</button>
+  return <S.Button>Button</S.Button>
 }

@@ -5,6 +5,8 @@ import reactlogo, {
   ReactComponent as ReactLogo,
 } from './assets/images/react.svg'
 
+import { Button } from './components'
+
 export const App: React.VFC = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ export const App: React.VFC = () => {
       <ReactLogo style={{ width: '100px' }} />
 
       <h1>Wellcome to React with webpack</h1>
+      <Button />
     </div>
   )
 }
