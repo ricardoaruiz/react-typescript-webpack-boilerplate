@@ -16,7 +16,7 @@ export const App: React.VFC = () => {
       <ReactLogo style={{ width: '100px' }} />
 
       <h1>Wellcome to React with webpack</h1>
-      <Button />
+      <Button>Clique aqui</Button>
     </div>
   )
 }
