@@ -3,13 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     mode: 'development',
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
     devServer: {
         historyApiFallback: true,
         open: true
@@ -17,12 +20,9 @@ module.exports = {
     module: {
         rules: [
             { 
-                test: /\.(js|jsx)$/, 
-                use: 'babel-loader', 
-                exclude: /node_modules/, 
-                resolve: {
-                    extensions: [".js", ".jsx"]
-                }
+                test: /\.(ts|js)x?$/, 
+                exclude: /node_modules/,
+                use: ['babel-loader']
             }
         ]
     },
