@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
-    filename: 'main.js',
+    filename: '[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },

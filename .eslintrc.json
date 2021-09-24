@@ -29,6 +29,7 @@
         "@typescript-eslint",
         "react-hooks"
     ],
+    "ignorePatterns": ["webpack.*.js"],
     "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off",
