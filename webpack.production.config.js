@@ -3,19 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
+  mode: 'production',
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
-  mode: 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-  },
-  devServer: {
-    historyApiFallback: true,
-    open: true,
   },
   module: {
     rules: [
