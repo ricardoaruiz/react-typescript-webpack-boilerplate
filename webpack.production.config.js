@@ -20,6 +20,14 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(png|jpg?g|gif)$/i,
+        use: ['file-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader']
+      }
     ],
   },
   plugins: [

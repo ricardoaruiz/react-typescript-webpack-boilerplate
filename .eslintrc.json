@@ -29,7 +29,7 @@
         "@typescript-eslint",
         "react-hooks"
     ],
-    "ignorePatterns": ["webpack.*.js"],
+    "ignorePatterns": ["webpack.*.js", "src/assets/images/*.*"],
     "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off",
