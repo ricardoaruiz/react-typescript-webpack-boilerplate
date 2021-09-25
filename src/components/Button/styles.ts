@@ -1,42 +1,42 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
 type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'outlined'
 }
 
 const buttonModifiers = {
-  primary: () => css`
-    background-color: #1e78c0;
-    color: #fff;
+  primary: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
 
     &:hover {
-      background-color: #8ed6fb;
+      background-color: ${theme.colors.privaryHover};
     }
     &:disabled {
-      background-color: #1e78c0;
+      background-color: ${theme.colors.primary};
     }
   `,
-  secondary: () => css`
-    background-color: #ffc133;
-    color: #fff;
+  secondary: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.secondary};
+    color: ${theme.colors.white};
 
     &:hover {
-      background-color: #ffb809;
+      background-color: ${theme.colors.secondaryHover};
     }
     &:disabled {
-      background-color: #ffc133;
+      background-color: ${theme.colors.secondary};
     }
   `,
-  outlined: () => css`
+  outlined: (theme: DefaultTheme) => css`
     background-color: transparent;
-    color: #1e78c0;
+    color: ${theme.colors.primary};
 
-    border: 1px solid #1e78c0;
+    border: 1px solid ${theme.colors.primary};
   `,
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ variant = 'primary' }) => css`
+  ${({ theme, variant = 'primary' }) => css`
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -44,7 +44,7 @@ export const Button = styled.button<ButtonProps>`
     font-weight: 700;
     cursor: pointer;
 
-    ${buttonModifiers[variant]};
+    ${buttonModifiers[variant](theme)};
 
     &:disabled {
       filter: brightness(0.9);
