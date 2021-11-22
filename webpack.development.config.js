@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -12,6 +13,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    plugins: [
+      new TSConfigPathsPlugin({
+          configFile: path.resolve(__dirname, './tsconfig.json'),
+      }),
+    ],
   },
   devServer: {
     historyApiFallback: true,

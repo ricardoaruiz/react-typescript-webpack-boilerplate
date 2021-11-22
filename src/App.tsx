@@ -1,14 +1,12 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import webpacklogo from './assets/images/webpack.png'
-import reactlogo, {
-  ReactComponent as ReactLogo,
-} from './assets/images/react.svg'
+import webpacklogo from 'assets/images/webpack.png'
+import reactlogo, { ReactComponent as ReactLogo } from 'assets/images/react.svg'
 
-import { Button } from './components'
-import { GlobalStyles } from './styles/GlobalStyles'
-import { myTheme } from './styles/Theme'
+import { Button } from 'components'
+import { GlobalStyles } from 'styles/GlobalStyles'
+import { myTheme } from 'styles/Theme'
 
 export const App: React.VFC = () => {
   return (
