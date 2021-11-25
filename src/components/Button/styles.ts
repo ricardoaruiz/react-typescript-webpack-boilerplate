@@ -37,6 +37,9 @@ const buttonModifiers = {
 
 export const Button = styled.button<ButtonProps>`
   ${({ theme, variant = 'primary' }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     padding: 10px;
     border-radius: 4px;
