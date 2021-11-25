@@ -1,4 +1,5 @@
 module.exports = {
+  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
@@ -6,6 +7,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   moduleNameMapper: {
     '\\.(scss|sass)$': 'identity-obj-proxy',
+    '^.+\\.svg$': 'jest-svg-transformer',
   },
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest',
